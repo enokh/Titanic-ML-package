@@ -2,8 +2,8 @@
 package_name: regression_model
 
 # Data Files
-training_data_file: train.csv
-test_data_file: 
+training_data_file: titanic.csv
+test_data_file: test.csv
 
 # Variables
 # The variable we are attempting to predict (sale price)
@@ -39,5 +39,5 @@ test_size: 0.1
 # to set the random seed
 random_state: 0
 
-alpha: 0.001
+C: 0.005
 
