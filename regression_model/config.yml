@@ -1,0 +1,43 @@
+# Package Overview
+package_name: regression_model
+
+# Data Files
+training_data_file: train.csv
+test_data_file: 
+
+# Variables
+# The variable we are attempting to predict (sale price)
+target: survived
+
+pipeline_name: regression_model
+pipeline_save_file: regression_model_output_v
+
+features:
+  - age
+  - fare
+  - sex
+  - cabin
+  - embarked
+  - title
+
+numerical_vars:
+  - age
+  - fare
+
+categorical_vars:
+  - sex
+  - cabin
+  - embarked
+  - title
+
+cabin_vars:
+  - cabin
+
+# set train/test split
+test_size: 0.1
+
+# to set the random seed
+random_state: 0
+
+alpha: 0.001
+
