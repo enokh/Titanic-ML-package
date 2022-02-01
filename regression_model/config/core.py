@@ -7,7 +7,7 @@ from strictyaml import YAML, load
 import regression_model
 
 
-# Project Directories --> change later maybe???
+# Project Directories
 PACKAGE_ROOT = Path(regression_model.__file__).resolve().parent
 ROOT = PACKAGE_ROOT.parent
 CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
