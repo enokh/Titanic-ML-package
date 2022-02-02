@@ -8,9 +8,6 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 
 
-# to persist the model and the scaler
-import joblib
-
 # ========== NEW IMPORTS ========
 # Respect to notebook 02-Predicting-Survival-Titanic-Solution
 

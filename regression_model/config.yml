@@ -30,6 +30,8 @@ categorical_vars:
   - embarked
   - title
 
+
+
 cabin_vars:
   - cabin
 
