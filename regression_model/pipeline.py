@@ -8,11 +8,8 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 
 
-# ========== NEW IMPORTS ========
-# Respect to notebook 02-Predicting-Survival-Titanic-Solution
-
 from sklearn.pipeline import Pipeline
-
+from sklearn.preprocessing import StandardScaler
 from sklearn.base import BaseEstimator, TransformerMixin
 
 from feature_engine.imputation import (
@@ -25,6 +22,10 @@ from feature_engine.encoding import (
     OneHotEncoder
 )
 
+from regression_model.processing import features as pp
+from regression_model.config.core import config
+
+
 
 titanic_pipe = Pipeline([
 
@@ -35,7 +36,7 @@ titanic_pipe = Pipeline([
 
     # add missing indicator to numerical variables
     ('missing_indicator', AddMissingIndicator(
-    variables=NUMERICAL_VARIABLES)),
+    variables=config.model_config.numerical_vars)),
 
     # impute numerical variables with the median
     ('median_imputation', MeanMedianImputer(
@@ -43,7 +44,7 @@ titanic_pipe = Pipeline([
 
 
     # Extract first letter from cabin
-    ('extract_letter', ExtractLetterTransformer(
+    ('extract_letter', pp.ExtractLetterTransformer(
     variables=config.model_config.cabin)),
 
 
